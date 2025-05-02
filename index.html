@@ -1,169 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Liberal Campaign Promise Tracker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Promises</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
       padding: 20px;
-      max-width: 900px;
-      margin: auto;
-      color: #333;
-    }
-    h1 {
-      color: #d71920;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    h2 {
-      color: #b10e1e;
-      border-bottom: 2px solid #d71920;
-      padding-bottom: 5px;
-      margin-top: 40px;
+      background-color: #f5f5f5;
     }
     .promise {
-      background-color: #fff;
-      border-left: 8px solid #d71920;
-      border-radius: 6px;
+      background: white;
+      border: 1px solid #ccc;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
     }
-    .promise-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .promise-title {
-      font-weight: bold;
-      font-size: 1.2em;
+    .details {
+      display: none;
+      margin-top: 10px;
     }
     .toggle-description {
-      background-color: #d71920;
-      border: none;
+      background-color: #007bff;
       color: white;
-      padding: 8px 14px;
-      font-size: 0.95em;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
       cursor: pointer;
-      border-radius: 4px;
     }
-    .promise-description {
-      margin-top: 12px;
-      display: none;
-      font-size: 0.95em;
-      color: #555;
-      background-color: #f1f1f1;
-      padding: 12px;
-      border-radius: 4px;
+    .toggle-description:hover {
+      background-color: #0056b3;
     }
-    input[type="checkbox"] {
-      transform: scale(1.6);
-      margin-right: 12px;
-      accent-color: #d71920;
-      cursor: not-allowed;
+    ul {
+      padding-left: 20px;
     }
   </style>
   <script>
     function toggleDescription(id) {
-      var desc = document.getElementById(id);
-      desc.style.display = (desc.style.display === "block") ? "none" : "block";
+      const desc = document.getElementById(id);
+      desc.style.display = desc.style.display === "none" ? "block" : "none";
     }
   </script>
 </head>
 <body>
-  <h1>Liberal Campaign Promise Tracker</h1>
+  <h1>Mark Carney Campaign Promises</h1>
 
-  <h2>Canada Strong</h2>
   <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>One Canadian Economy</label>
-      <button class="toggle-description" onclick="toggleDescription('desc1')">Details</button>
+    <label><input type="checkbox" disabled> One Canadian Economy</label>
+    <button class="toggle-description" onclick="toggleDescription('desc-one-economy')">Details</button>
+    <div class="details" id="desc-one-economy">
+      <p>Canada needs a unified economy to counter external threats and create growth by reducing internal trade barriers and improving labour mobility.</p>
+      <ul>
+        <li>Reduce internal trade costs by up to 15%</li>
+        <li>Expand economy by up to $200 billion (about $5,000 per Canadian)</li>
+        <li>Table legislation by Canada Day to eliminate all federal barriers to interprovincial trade and labour mobility</li>
+        <li>Achieve mutual recognition of professional credentials across provinces</li>
+        <li>Mandate federal departments to review and report within 60 days on regulatory streamlining</li>
+        <li>Prioritize major economic projects that span provincial/territorial boundaries</li>
+      </ul>
     </div>
-    <div id="desc1" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Nation-building Projects</label>
-      <button class="toggle-description" onclick="toggleDescription('desc2')">Details</button>
-    </div>
-    <div id="desc2" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Getting Projects Done Faster and Better</label>
-      <button class="toggle-description" onclick="toggleDescription('desc3')">Details</button>
-    </div>
-    <div id="desc3" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Reinforcing CBC/Radio-Canada</label>
-      <button class="toggle-description" onclick="toggleDescription('desc4')">Details</button>
-    </div>
-    <div id="desc4" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Discovering and Celebrating Canada</label>
-      <button class="toggle-description" onclick="toggleDescription('desc5')">Details</button>
-    </div>
-    <div id="desc5" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Buy Canadian</label>
-      <button class="toggle-description" onclick="toggleDescription('desc6')">Details</button>
-    </div>
-    <div id="desc6" class="promise-description">[Description goes here]</div>
   </div>
 
-  <h2>Secure</h2>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Defending Our Sovereignty</label>
-      <button class="toggle-description" onclick="toggleDescription('desc7')">Details</button>
-    </div>
-    <div id="desc7" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Arctic Sovereignty and Prosperity</label>
-      <button class="toggle-description" onclick="toggleDescription('desc8')">Details</button>
-    </div>
-    <div id="desc8" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Veterans</label>
-      <button class="toggle-description" onclick="toggleDescription('desc9')">Details</button>
-    </div>
-    <div id="desc9" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Defending Our Economy</label>
-      <button class="toggle-description" onclick="toggleDescription('desc10')">Details</button>
-    </div>
-    <div id="desc10" class="promise-description">[Description goes here]</div>
-  </div>
+  <!-- Repeat for other sections as user submits them -->
 
-  <h2>Protect</h2>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Public Health Care</label>
-      <button class="toggle-description" onclick="toggleDescription('desc11')">Details</button>
-    </div>
-    <div id="desc11" class="promise-description">[Description goes here]</div>
-  </div>
-  <div class="promise">
-    <div class="promise-header">
-      <label><input type="checkbox" disabled>Support for Families</label>
-      <button class="toggle-description" onclick="toggleDescription('desc12')">Details</button>
-    </div>
-    <div id="desc12" class="promise-description">[Description goes here]</div>
-  </div>
 </body>
 </html>
