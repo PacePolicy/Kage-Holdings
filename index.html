@@ -6,98 +6,176 @@
   <title>Liberal Campaign Promise Tracker</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
       padding: 20px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
-    }
-
-    h1 {
-      text-align: center;
       color: #333;
     }
-
+    h1 {
+      color: #d71920;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #b10e1e;
+      border-bottom: 2px solid #d71920;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+    .category {
+      display: flex;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .category img {
+      width: 36px;
+      height: 36px;
+      margin-right: 10px;
+    }
     .promise {
       background-color: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      border-left: 5px solid #d71920;
+      border-radius: 6px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
-
+    .promise-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     .promise-title {
       font-weight: bold;
-      font-size: 1.2em;
-      margin-bottom: 10px;
+      font-size: 1.05em;
     }
-
-    .promise-description {
-      margin-bottom: 10px;
-      color: #444;
-    }
-
-    .progress-container {
-      background-color: #e0e0e0;
+    .toggle-description {
+      background-color: #d71920;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      font-size: 0.9em;
+      cursor: pointer;
       border-radius: 4px;
-      height: 20px;
-      overflow: hidden;
-      margin-bottom: 5px;
     }
-
-    .progress-bar {
-      height: 100%;
-      text-align: right;
-      padding-right: 5px;
-      color: white;
-      font-size: 0.85em;
-      background-color: #0078d4;
+    .promise-description {
+      margin-top: 10px;
+      display: none;
+      font-size: 0.95em;
+      color: #555;
+      background-color: #f1f1f1;
+      padding: 10px;
+      border-radius: 4px;
     }
-
-    .grade-box {
-      text-align: center;
-      margin-top: 30px;
-      padding: 15px;
-      background-color: #0078d4;
-      color: white;
-      font-size: 1.3em;
-      font-weight: bold;
-      border-radius: 8px;
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 10px;
     }
   </style>
+  <script>
+    function toggleDescription(id) {
+      var desc = document.getElementById(id);
+      if (desc.style.display === "none" || desc.style.display === "") {
+        desc.style.display = "block";
+      } else {
+        desc.style.display = "none";
+      }
+    }
+  </script>
 </head>
 <body>
-
   <h1>Liberal Campaign Promise Tracker</h1>
 
-  <!-- Example Promise 1 -->
+  <h2>Canada Strong</h2>
   <div class="promise">
-    <div class="promise-title">$10-a-day Childcare Nationwide</div>
-    <div class="promise-description">
-      Description goes here: e.g., "The Liberal government promised to deliver $10-a-day childcare by 2026 across Canada. Agreements have been signed with most provinces."
+    <div class="promise-header">
+      <label><input type="checkbox">One Canadian Economy</label>
+      <button class="toggle-description" onclick="toggleDescription('desc1')">Details</button>
     </div>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: 65%;">65%</div>
-    </div>
+    <div id="desc1" class="promise-description">[Description goes here]</div>
   </div>
-
-  <!-- Example Promise 2 -->
   <div class="promise">
-    <div class="promise-title">Ban on Assault-Style Firearms</div>
-    <div class="promise-description">
-      Description goes here: e.g., "A ban was announced in 2020, but implementation and buyback efforts are ongoing and incomplete."
+    <div class="promise-header">
+      <label><input type="checkbox">Nation-building Projects</label>
+      <button class="toggle-description" onclick="toggleDescription('desc2')">Details</button>
     </div>
-    <div class="progress-container">
-      <div class="progress-bar" style="width: 40%;">40%</div>
+    <div id="desc2" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Getting Projects Done Faster and Better</label>
+      <button class="toggle-description" onclick="toggleDescription('desc3')">Details</button>
     </div>
+    <div id="desc3" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Reinforcing CBC/Radio-Canada</label>
+      <button class="toggle-description" onclick="toggleDescription('desc4')">Details</button>
+    </div>
+    <div id="desc4" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Discovering and Celebrating Canada</label>
+      <button class="toggle-description" onclick="toggleDescription('desc5')">Details</button>
+    </div>
+    <div id="desc5" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Buy Canadian</label>
+      <button class="toggle-description" onclick="toggleDescription('desc6')">Details</button>
+    </div>
+    <div id="desc6" class="promise-description">[Description goes here]</div>
   </div>
 
-  <!-- Add more promises as needed -->
-
-  <!-- Overall Grade -->
-  <div class="grade-box">
-    Overall Grade: B-
+  <h2>Secure</h2>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Defending Our Sovereignty</label>
+      <button class="toggle-description" onclick="toggleDescription('desc7')">Details</button>
+    </div>
+    <div id="desc7" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Arctic Sovereignty and Prosperity</label>
+      <button class="toggle-description" onclick="toggleDescription('desc8')">Details</button>
+    </div>
+    <div id="desc8" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Veterans</label>
+      <button class="toggle-description" onclick="toggleDescription('desc9')">Details</button>
+    </div>
+    <div id="desc9" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Defending Our Economy</label>
+      <button class="toggle-description" onclick="toggleDescription('desc10')">Details</button>
+    </div>
+    <div id="desc10" class="promise-description">[Description goes here]</div>
   </div>
 
+  <h2>Protect</h2>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Public Health Care</label>
+      <button class="toggle-description" onclick="toggleDescription('desc11')">Details</button>
+    </div>
+    <div id="desc11" class="promise-description">[Description goes here]</div>
+  </div>
+  <div class="promise">
+    <div class="promise-header">
+      <label><input type="checkbox">Support for Families</label>
+      <button class="toggle-description" onclick="toggleDescription('desc12')">Details</button>
+    </div>
+    <div id="desc12" class="promise-description">[Description goes here]</div>
+  </div>
 </body>
 </html>
