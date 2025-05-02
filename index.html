@@ -24,16 +24,6 @@
       padding-bottom: 5px;
       margin-top: 40px;
     }
-    .category {
-      display: flex;
-      align-items: center;
-      margin-top: 40px;
-    }
-    .category img {
-      width: 36px;
-      height: 36px;
-      margin-right: 10px;
-    }
     .promise {
       background-color: #fff;
       border-left: 5px solid #d71920;
@@ -70,8 +60,15 @@
       border-radius: 4px;
     }
     input[type="checkbox"] {
-      transform: scale(1.2);
+      transform: scale(1.8);
       margin-right: 10px;
+      pointer-events: none;
+      accent-color: #d71920;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 1.1em;
     }
   </style>
   <script>
@@ -91,42 +88,42 @@
   <h2>Canada Strong</h2>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">One Canadian Economy</label>
+      <label><input type="checkbox" disabled>One Canadian Economy</label>
       <button class="toggle-description" onclick="toggleDescription('desc1')">Details</button>
     </div>
     <div id="desc1" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Nation-building Projects</label>
+      <label><input type="checkbox" disabled>Nation-building Projects</label>
       <button class="toggle-description" onclick="toggleDescription('desc2')">Details</button>
     </div>
     <div id="desc2" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Getting Projects Done Faster and Better</label>
+      <label><input type="checkbox" disabled>Getting Projects Done Faster and Better</label>
       <button class="toggle-description" onclick="toggleDescription('desc3')">Details</button>
     </div>
     <div id="desc3" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Reinforcing CBC/Radio-Canada</label>
+      <label><input type="checkbox" disabled>Reinforcing CBC/Radio-Canada</label>
       <button class="toggle-description" onclick="toggleDescription('desc4')">Details</button>
     </div>
     <div id="desc4" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Discovering and Celebrating Canada</label>
+      <label><input type="checkbox" disabled>Discovering and Celebrating Canada</label>
       <button class="toggle-description" onclick="toggleDescription('desc5')">Details</button>
     </div>
     <div id="desc5" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Buy Canadian</label>
+      <label><input type="checkbox" disabled>Buy Canadian</label>
       <button class="toggle-description" onclick="toggleDescription('desc6')">Details</button>
     </div>
     <div id="desc6" class="promise-description">[Description goes here]</div>
@@ -135,28 +132,28 @@
   <h2>Secure</h2>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Defending Our Sovereignty</label>
+      <label><input type="checkbox" disabled>Defending Our Sovereignty</label>
       <button class="toggle-description" onclick="toggleDescription('desc7')">Details</button>
     </div>
     <div id="desc7" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Arctic Sovereignty and Prosperity</label>
+      <label><input type="checkbox" disabled>Arctic Sovereignty and Prosperity</label>
       <button class="toggle-description" onclick="toggleDescription('desc8')">Details</button>
     </div>
     <div id="desc8" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Veterans</label>
+      <label><input type="checkbox" disabled>Veterans</label>
       <button class="toggle-description" onclick="toggleDescription('desc9')">Details</button>
     </div>
     <div id="desc9" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Defending Our Economy</label>
+      <label><input type="checkbox" disabled>Defending Our Economy</label>
       <button class="toggle-description" onclick="toggleDescription('desc10')">Details</button>
     </div>
     <div id="desc10" class="promise-description">[Description goes here]</div>
@@ -165,14 +162,14 @@
   <h2>Protect</h2>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Public Health Care</label>
+      <label><input type="checkbox" disabled>Public Health Care</label>
       <button class="toggle-description" onclick="toggleDescription('desc11')">Details</button>
     </div>
     <div id="desc11" class="promise-description">[Description goes here]</div>
   </div>
   <div class="promise">
     <div class="promise-header">
-      <label><input type="checkbox">Support for Families</label>
+      <label><input type="checkbox" disabled>Support for Families</label>
       <button class="toggle-description" onclick="toggleDescription('desc12')">Details</button>
     </div>
     <div id="desc12" class="promise-description">[Description goes here]</div>
