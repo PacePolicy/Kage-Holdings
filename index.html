@@ -26,11 +26,11 @@
     }
     .promise {
       background-color: #fff;
-      border-left: 5px solid #d71920;
+      border-left: 8px solid #d71920;
       border-radius: 6px;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
     .promise-header {
       display: flex;
@@ -39,46 +39,37 @@
     }
     .promise-title {
       font-weight: bold;
-      font-size: 1.05em;
+      font-size: 1.2em;
     }
     .toggle-description {
       background-color: #d71920;
       border: none;
       color: white;
-      padding: 5px 10px;
-      font-size: 0.9em;
+      padding: 8px 14px;
+      font-size: 0.95em;
       cursor: pointer;
       border-radius: 4px;
     }
     .promise-description {
-      margin-top: 10px;
+      margin-top: 12px;
       display: none;
       font-size: 0.95em;
       color: #555;
       background-color: #f1f1f1;
-      padding: 10px;
+      padding: 12px;
       border-radius: 4px;
     }
     input[type="checkbox"] {
-      transform: scale(1.8);
-      margin-right: 10px;
-      pointer-events: none;
+      transform: scale(1.6);
+      margin-right: 12px;
       accent-color: #d71920;
-    }
-    label {
-      display: flex;
-      align-items: center;
-      font-size: 1.1em;
+      cursor: not-allowed;
     }
   </style>
   <script>
     function toggleDescription(id) {
       var desc = document.getElementById(id);
-      if (desc.style.display === "none" || desc.style.display === "") {
-        desc.style.display = "block";
-      } else {
-        desc.style.display = "none";
-      }
+      desc.style.display = (desc.style.display === "block") ? "none" : "block";
     }
   </script>
 </head>
@@ -90,19 +81,6 @@
     <div class="promise-header">
       <label><input type="checkbox" disabled>One Canadian Economy</label>
       <button class="toggle-description" onclick="toggleDescription('desc1')">Details</button>
-      <p><strong>Summary:</strong><br>
-Mark Carney’s plan focuses on unifying Canada's economy by eliminating internal trade barriers, boosting productivity, and improving labour mobility. This would strengthen Canada’s economic sovereignty and counter the effects of international trade threats.
-</p>
-
-<p><strong>Key Quantitative Highlights:</strong></p>
-<ul>
-  <li><strong>Up to 15% reduction</strong> in internal trade costs.</li>
-  <li><strong>Up to $200 billion</strong> in economic expansion — approximately <strong>$5,000 per Canadian</strong>.</li>
-  <li>Legislation to remove all <strong>federal interprovincial trade and labour mobility barriers</strong> will be tabled <strong>by Canada Day</strong>.</li>
-  <li>Mutual recognition of <strong>professional credentials</strong> (e.g., healthcare, finance, trucking) across provinces.</li>
-  <li>All relevant federal departments must report on red tape reduction progress <strong>within 60 days</strong>.</li>
-  <li>Fast-tracked funding and assessment for <strong>nation-building infrastructure projects</strong> to boost investment certainty.</li>
-</ul>
     </div>
     <div id="desc1" class="promise-description">[Description goes here]</div>
   </div>
