@@ -16,7 +16,7 @@
     h1 {
       text-align: center;
       font-size: 2.5em;
-      color: #007bff;
+      color: #d32f2f; /* Liberal red */
       margin-bottom: 30px;
     }
 
@@ -46,7 +46,7 @@
     }
 
     .toggle-description {
-      background-color: #007bff;
+      background-color: #d32f2f; /* Liberal red */
       color: white;
       border: none;
       padding: 10px 20px;
@@ -57,7 +57,7 @@
     }
 
     .toggle-description:hover {
-      background-color: #0056b3;
+      background-color: #b71c1c; /* Darker red for hover */
     }
 
     .details {
@@ -76,11 +76,43 @@
     }
 
     strong {
-      color: #007bff;
+      color: #d32f2f; /* Liberal red */
+    }
+
+    .status-bar-container {
+      margin-top: 20px;
+    }
+
+    .status-bar {
+      width: 100%;
+      height: 15px;
+      background-color: #ddd;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .status-bar-fill {
+      height: 100%;
+      background-color: #d32f2f; /* Liberal red */
+      width: 0%; /* Starting at 0% */
+      border-radius: 5px;
+    }
+
+    .status-text {
+      margin-top: 5px;
+      font-size: 1em;
+      color: #333;
     }
 
     .policy-section {
       margin-bottom: 25px;
+    }
+
+    .category-title {
+      font-size: 1.5em;
+      color: #d32f2f; /* Liberal red */
+      margin-top: 40px;
+      text-decoration: underline;
     }
   </style>
   <script>
@@ -108,6 +140,13 @@
         <li>Prioritize major economic projects that span provincial/territorial boundaries</li>
       </ul>
     </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
+    </div>
   </div>
 
   <!-- Nation-building Projects -->
@@ -124,6 +163,13 @@
         <li>Expand the east-west electricity grid to connect clean power across Canada and enhance energy security</li>
         <li>Provide an additional $250 million to the Rural Transit Solutions Fund for local and regional transit</li>
       </ul>
+    </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
     </div>
   </div>
 
@@ -144,6 +190,13 @@
         <li>Modernize impact assessment laws to provide clarity and reduce uncertainty</li>
       </ul>
     </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
+    </div>
   </div>
 
   <!-- Financing Infrastructure and Housing -->
@@ -161,6 +214,13 @@
         <li>Offer credit enhancement tools to lower borrowing costs for municipalities and Indigenous governments</li>
         <li>Modernize procurement and financing rules to prioritize shovel-ready projects that meet climate and housing goals</li>
       </ul>
+    </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
     </div>
   </div>
 
@@ -180,6 +240,13 @@
         <li>Enhance funding to support Canadian creators and artists, including Canada Council for the Arts and Telefilm</li>
       </ul>
     </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
+    </div>
   </div>
 
   <!-- Discovering and Celebrating Canada -->
@@ -194,6 +261,13 @@
         <li>Reduce prices for camping sites in national parks from June to August for all Canadians</li>
         <li>Offer discounted access and fares for young Canadians aged 18-24 to encourage travel within Canada</li>
       </ul>
+    </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
     </div>
   </div>
 
@@ -212,6 +286,13 @@
         <li>Encourage the purchase of Canadian-built vehicles to support the auto industry and drive domestic investment</li>
         <li>Leverage government funding to support Canadian innovators and entrepreneurs through government purchases</li>
       </ul>
+    </div>
+    <!-- Status bar and completion -->
+    <div class="status-bar-container">
+      <div class="status-bar">
+        <div class="status-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="status-text">Status: Pending | Completion: 0%</div>
     </div>
   </div>
 
