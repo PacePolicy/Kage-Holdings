@@ -209,10 +209,15 @@
     function parseCSV(text) {
       const [headerLine, ...lines] = text.trim().split('\n');
       const headers = headerLine.split(',').map(h => h.trim().replace(/(^"|"$)/g, '')); // Clean headers
+      console.log("Parsed Headers: ", headers); // Log headers for inspection
+
       return lines.map(line => {
         const values = line.split(',');
         const obj = {};
-        headers.forEach((h, i) => obj[h] = values[i].replace(/(^"|"$)/g, '').trim());  // Clean data
+        headers.forEach((h, i) => {
+          // Clean data by trimming and removing potential quotes
+          obj[h] = values[i] ? values[i].replace(/(^"|"$)/g, '').trim() : '';  
+        });
         return obj;
       });
     }
@@ -224,10 +229,13 @@
         const rows = parseCSV(csvText);
 
         // Only use the first 8 rows for investments
-        const investmentRows = rows.slice(0, 8);
+        const investmentRows = rows.slice(1, 9); // Starting from row 1 to row 8
 
         // Assuming row 9 (index 8) contains summary data
         const summary = rows[8];
+
+        // Log to check if data is parsed correctly
+        console.log("Rows Data: ", investmentRows);
 
         // Update the dashboard with summary values
         document.getElementById('totalPortfolioValue').innerText = `$${summary['L9'] || '0.00'}`;
