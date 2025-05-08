@@ -151,10 +151,14 @@
         callback: function(data) {
           const tableBody = document.querySelector("#investmentTable tbody");
 
+          // Ensure the correct data is being pulled
+          console.log(data);  // Debugging step to see the full data in console
+
           // Update specific values from the Google Sheet
-          document.getElementById("totalPortfolioValue").innerText = `$${data[8]['L9']}`;  // Total Portfolio Value
-          document.getElementById("amountInvested").innerText = `$${data[8]['E9']}`;  // Amount Invested
-          document.getElementById("netGainLoss").innerText = `$${data[8]['M9']}`;  // Net Gain/Loss
+          const portfolioData = data[8]; // Assuming the values are in row 9 (zero-based index)
+          document.getElementById("totalPortfolioValue").innerText = `$${portfolioData['L9']}`;  // Total Portfolio Value
+          document.getElementById("amountInvested").innerText = `$${portfolioData['E9']}`;  // Amount Invested
+          document.getElementById("netGainLoss").innerText = `$${portfolioData['M9']}`;  // Net Gain/Loss
 
           // Populate the table with investment data
           data.forEach(item => {
