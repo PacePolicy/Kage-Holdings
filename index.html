@@ -2,262 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Campaign Promises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kage Holdings Company</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f7fc;
-      margin: 0;
-      padding: 20px;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
     }
-
-    h1 {
-      text-align: left;
-      font-size: 2.5em;
-      color: #d32f2f; /* Liberal red */
-      margin-bottom: 5px;
+    .container {
+      background: white;
+      padding: 40px;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h2 {
-      text-align: left;
-      font-size: 1.5em;
-      color: #333;
-      margin-top: 0;
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
     }
-
-    .promise {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease-in-out;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .promise:hover {
-      transform: translateY(-5px);
-    }
-
-    .promise label {
-      font-size: 1.1em;
-      font-weight: bold;
-      margin-right: 15px;
-      color: #333;
-      display: inline-block;
-    }
-
-    .promise input[type="checkbox"] {
-      margin-right: 10px;
-    }
-
-    .toggle-description {
-      background-color: #d32f2f; /* Liberal red */
+    button {
+      padding: 12px 20px;
+      background-color: #1d3557;
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .toggle-description:hover {
-      background-color: #b71c1c; /* Darker red for hover */
-    }
-
-    .details {
-      display: none;
-      margin-top: 15px;
-    }
-
-    .category-title {
-      font-size: 1.5em;
-      color: #d32f2f;
-      margin-top: 40px;
-      text-decoration: underline;
-    }
-
-    .details-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .details-container input[type="text"] {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 1em;
-    }
-
-    .status-bar-container {
-      margin-top: 20px;
-    }
-
-    .status-bar {
-      width: 100%;
-      height: 15px;
-      background-color: #ddd;
-      border-radius: 5px;
       margin-top: 10px;
     }
-
-    .status-bar-fill {
-      height: 100%;
-      background-color: #d32f2f;
-      width: 0%;
-      border-radius: 5px;
-    }
-
-    .status-text {
-      margin-top: 5px;
-      font-size: 1em;
-      color: #333;
+    button:hover {
+      background-color: #457b9d;
     }
   </style>
-  <script>
-    function toggleDescription(id) {
-      const desc = document.getElementById(id);
-      desc.style.display = desc.style.display === "none" ? "block" : "none";
-    }
-  </script>
 </head>
 <body>
-  <h1>Liberal Party Campaign Promises</h1>
-  <h2>Canadian Reliance</h2>
 
-  <!-- Promise One -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> One Canadian Economy</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-one-economy')">Details</button>
-      <div class="details" id="desc-one-economy">
-        <label for="details-one-economy">Details:</label>
-        <input type="text" id="details-one-economy" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
+  <div class="container">
+    <h1>Welcome to Kage Holdings Company</h1>
+    <p>Your trusted partner in financial investments and services.</p>
+
+    <h3>Client Login</h3>
+    <form onsubmit="return loginUser()">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p id="errorMsg" style="color: red;"></p>
   </div>
 
-  <!-- Promise Two -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Nation-building Projects</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-nation')">Details</button>
-      <div class="details" id="desc-nation">
-        <label for="details-nation">Details:</label>
-        <input type="text" id="details-nation" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
+  <script>
+    function loginUser() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const error = document.getElementById('errorMsg');
 
-  <!-- Promise Three -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Getting Projects Done Faster and Better</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-faster-projects')">Details</button>
-      <div class="details" id="desc-faster-projects">
-        <label for="details-faster-projects">Details:</label>
-        <input type="text" id="details-faster-projects" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
+      if (user === 'FinnJHNakamura' && pass === 'Frosty12') {
+        window.location.href = 'client1.html';
+      } else {
+        error.textContent = 'Invalid username or password.';
+      }
 
-  <!-- Promise Four -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Financing Infrastructure and Housing</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-financing')">Details</button>
-      <div class="details" id="desc-financing">
-        <label for="details-financing">Details:</label>
-        <input type="text" id="details-financing" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
-
-  <!-- Promise Five -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Reinforcing CBC/Radio-Canada, Protecting Canadian Voices</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-cbc')">Details</button>
-      <div class="details" id="desc-cbc">
-        <label for="details-cbc">Details:</label>
-        <input type="text" id="details-cbc" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
-
-  <!-- Promise Six -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Discovering and Celebrating Canada</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-discover')">Details</button>
-      <div class="details" id="desc-discover">
-        <label for="details-discover">Details:</label>
-        <input type="text" id="details-discover" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
-
-  <!-- Promise Seven -->
-  <div class="promise">
-    <div class="details-container">
-      <label><input type="checkbox" disabled> Buy Canadian</label>
-      <button class="toggle-description" onclick="toggleDescription('desc-buy-canadian')">Details</button>
-      <div class="details" id="desc-buy-canadian">
-        <label for="details-buy-canadian">Details:</label>
-        <input type="text" id="details-buy-canadian" value="Promise pending - details unavailable" disabled>
-      </div>
-    </div>
-    <div class="status-bar-container">
-      <div class="status-bar">
-        <div class="status-bar-fill" style="width: 0%;"></div>
-      </div>
-      <div class="status-text">Status: Pending | Completion: 0%</div>
-    </div>
-  </div>
+      return false; // Prevent form from submitting normally
+    }
+  </script>
 
 </body>
 </html>
