@@ -223,17 +223,20 @@
       .then(csvText => {
         const rows = parseCSV(csvText);
 
+        // Only use the first 8 rows for investments
+        const investmentRows = rows.slice(0, 8);
+
         // Assuming row 9 (index 8) contains summary data
         const summary = rows[8];
 
         // Update the dashboard with summary values
-        document.getElementById('totalPortfolioValue').innerText = `$${summary['L9']}`;
-        document.getElementById('amountInvested').innerText = `$${summary['E9']}`;
-        document.getElementById('netGainLoss').innerText = `$${summary['M9']}`;
+        document.getElementById('totalPortfolioValue').innerText = `$${summary['L9'] || '0.00'}`;
+        document.getElementById('amountInvested').innerText = `$${summary['E9'] || '0.00'}`;
+        document.getElementById('netGainLoss').innerText = `$${summary['M9'] || '0.00'}`;
 
-        // Populate the investments table
+        // Populate the investments table with only the first 8 rows
         const tbody = document.querySelector('#investmentTable tbody');
-        rows.forEach(r => {
+        investmentRows.forEach(r => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td>${r['Investment #:']}</td>
