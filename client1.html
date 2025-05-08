@@ -231,16 +231,16 @@
         // Only use the first 8 rows for investments
         const investmentRows = rows.slice(1, 9); // Starting from row 1 to row 8
 
-        // Assuming row 9 (index 8) contains summary data
-        const summary = rows[8];
+        // Assuming row 8 (index 7) contains summary data
+        const summary = rows[7];
 
         // Log to check if data is parsed correctly
         console.log("Rows Data: ", investmentRows);
 
         // Update the dashboard with summary values
-        document.getElementById('totalPortfolioValue').innerText = `$${summary['L9'] || '0.00'}`;
-        document.getElementById('amountInvested').innerText = `$${summary['E9'] || '0.00'}`;
-        document.getElementById('netGainLoss').innerText = `$${summary['M9'] || '0.00'}`;
+        document.getElementById('totalPortfolioValue').innerText = `$${summary['L8'] || '0.00'}`;
+        document.getElementById('amountInvested').innerText = `$${summary['E8'] || '0.00'}`;
+        document.getElementById('netGainLoss').innerText = `$${summary['M8'] || '0.00'}`;
 
         // Populate the investments table with only the first 8 rows
         const tbody = document.querySelector('#investmentTable tbody');
