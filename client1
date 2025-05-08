@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Client Dashboard – Kage Holdings Company</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1d3557;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .dashboard {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 200px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card h3 {
+      margin: 0;
+      color: #457b9d;
+    }
+    .card p {
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    .actions {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .actions button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 1em;
+      background-color: #457b9d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      background-color: #1d3557;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #1d3557;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Kage Holdings Company</h1>
+    <p>Welcome, FinnJHNakamura</p>
+  </header>
+
+  <div class="dashboard">
+
+    <div class="card-container">
+      <div class="card">
+        <h3>Total Portfolio Value</h3>
+        <p>$158,200.45</p>
+      </div>
+      <div class="card">
+        <h3>Funds Available</h3>
+        <p>$12,500.00</p>
+      </div>
+      <div class="card">
+        <h3>Amount Invested</h3>
+        <p>$145,700.45</p>
+      </div>
+      <div class="card">
+        <h3>Net Gain/Loss</h3>
+        <p>+ $8,950.30</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button>View My Investments</button>
+      <button>Withdraw Funds</button>
+      <button>Download Statement</button>
+    </div>
+
+    <section>
+      <h2>Recent Investments</h2>
+      <ul>
+        <li>✔️ 50 shares of TSLA – $11,200.00</li>
+        <li>✔️ 30 shares of AAPL – $5,400.00</li>
+        <li>✔️ Crypto Fund (BTC/ETH mix) – $25,000.00</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>Deposited $5,000.00 – Apr 29, 2025</li>
+        <li>Dividend Received: $450.00 – Apr 25, 2025</li>
+        <li>Withdrew $2,000.00 – Apr 10, 2025</li>
+      </ul>
+    </section>
+
+  </div>
+
+</body>
+</html>
