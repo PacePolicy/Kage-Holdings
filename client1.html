@@ -70,6 +70,22 @@
     h2 {
       color: #1d3557;
     }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #457b9d;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -84,47 +100,81 @@
     <div class="card-container">
       <div class="card">
         <h3>Total Portfolio Value</h3>
-        <p>$158,200.45</p>
+        <p id="totalPortfolioValue">$158,200.45</p> <!-- Placeholder value -->
       </div>
       <div class="card">
         <h3>Funds Available</h3>
-        <p>$12,500.00</p>
+        <p>$150.00</p> <!-- Fixed value as per your request -->
       </div>
       <div class="card">
         <h3>Amount Invested</h3>
-        <p>$145,700.45</p>
+        <p id="amountInvested">$145,700.45</p> <!-- Placeholder value -->
       </div>
       <div class="card">
         <h3>Net Gain/Loss</h3>
-        <p>+ $8,950.30</p>
+        <p id="netGainLoss">+ $8,950.30</p> <!-- Placeholder value -->
       </div>
     </div>
 
     <div class="actions">
-      <button>View My Investments</button>
       <button>Withdraw Funds</button>
       <button>Download Statement</button>
     </div>
 
     <section>
-      <h2>Recent Investments</h2>
-      <ul>
-        <li>✔️ 50 shares of TSLA – $11,200.00</li>
-        <li>✔️ 30 shares of AAPL – $5,400.00</li>
-        <li>✔️ Crypto Fund (BTC/ETH mix) – $25,000.00</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Recent Activity</h2>
-      <ul>
-        <li>Deposited $5,000.00 – Apr 29, 2025</li>
-        <li>Dividend Received: $450.00 – Apr 25, 2025</li>
-        <li>Withdrew $2,000.00 – Apr 10, 2025</li>
-      </ul>
+      <h2>My Investments</h2>
+      <table id="investmentTable">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Market Value</th>
+            <th># of Shares</th>
+            <th>Net Value</th>
+            <th>Net Gain</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Investment data will be injected here -->
+        </tbody>
+      </table>
     </section>
 
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tabletop@1.5.1/tabletop.min.js"></script>
+  <script>
+    window.onload = function() {
+      Tabletop.init({
+        key: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTdLEghEmc9Kywj9lNgUQYN1gYIlvBupFd7pQComVJOYvb-HxwbEruFsso5cfybArZOl7maPZuWOXaO/pubhtml', // Your sheet's public URL
+        callback: function(data) {
+          const tableBody = document.querySelector("#investmentTable tbody");
+
+          // Update specific values from the Google Sheet
+          document.getElementById("totalPortfolioValue").innerText = `$${data[8]['L9']}`;  // Total Portfolio Value
+          document.getElementById("amountInvested").innerText = `$${data[8]['E9']}`;  // Amount Invested
+          document.getElementById("netGainLoss").innerText = `$${data[8]['M9']}`;  // Net Gain/Loss
+
+          // Populate the table with investment data
+          data.forEach(item => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${item['Ticker']}</td>
+              <td>${item['Status']}</td>
+              <td>${item['Date']}</td>
+              <td>${item['Market Value']}</td>
+              <td>${item['# of shares']}</td>
+              <td>${item['Net Value']}</td>
+              <td>${item['Net Gain']}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        },
+        simpleSheet: true
+      });
+    }
+  </script>
 
 </body>
 </html>
