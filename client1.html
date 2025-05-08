@@ -7,41 +7,42 @@
   <style>
     /* General page styling */
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f7fb;
+      background-color: #e9ecef;
       color: #333;
     }
 
     header {
-      background-color: #343a40;
-      color: #ffffff;
-      padding: 30px 20px;
+      background-color: #007bff;
+      color: white;
+      padding: 40px 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 600;
-      letter-spacing: 1px;
     }
 
     header p {
       margin: 10px 0 0;
       font-size: 1.2rem;
-      color: #a1aab1;
+      color: #d1d1d1;
     }
 
     .dashboard {
       padding: 40px 20px;
       max-width: 1400px;
       margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* Card Container */
     .card-container {
       display: flex;
       gap: 20px;
@@ -53,7 +54,7 @@
       background-color: #ffffff;
       border-radius: 12px;
       padding: 25px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       flex: 1;
       min-width: 220px;
       transition: transform 0.3s ease-in-out;
@@ -66,7 +67,7 @@
     .card h3 {
       margin: 0 0 10px;
       font-size: 1.8rem;
-      color: #343a40;
+      color: #007bff;
     }
 
     .card p {
@@ -74,7 +75,6 @@
       color: #5f6368;
     }
 
-    /* Button styling */
     .actions {
       display: flex;
       justify-content: center;
@@ -189,8 +189,6 @@
             <th>Date</th>
             <th>Insurance</th>
             <th>Purchase Cost</th>
-            <th>Cap %</th>
-            <th>Cap</th>
             <th>Market Value</th>
             <th># of Shares</th>
             <th>% of Share</th>
@@ -209,7 +207,6 @@
     function parseCSV(text) {
       const [headerLine, ...lines] = text.trim().split('\n');
       const headers = headerLine.split(',').map(h => h.trim().replace(/(^"|"$)/g, '')); // Clean headers
-      console.log("Parsed Headers: ", headers); // Log headers for inspection
 
       return lines.map(line => {
         const values = line.split(',');
@@ -228,23 +225,20 @@
       .then(csvText => {
         const rows = parseCSV(csvText);
 
-        // Only use the first 8 rows for investments
-        const investmentRows = rows.slice(1, 9); // Starting from row 1 to row 8
+        // Only use row 1 (headers) and the next 7 rows for investments
+        const investmentRows = rows.slice(0, 8); // Row 1 to row 8
 
         // Assuming row 8 (index 7) contains summary data
         const summary = rows[7];
-
-        // Log to check if data is parsed correctly
-        console.log("Rows Data: ", investmentRows);
 
         // Update the dashboard with summary values
         document.getElementById('totalPortfolioValue').innerText = `$${summary['L8'] || '0.00'}`;
         document.getElementById('amountInvested').innerText = `$${summary['E8'] || '0.00'}`;
         document.getElementById('netGainLoss').innerText = `$${summary['M8'] || '0.00'}`;
 
-        // Populate the investments table with only the first 8 rows
+        // Populate the investments table with only the first 7 rows (ignoring the header row)
         const tbody = document.querySelector('#investmentTable tbody');
-        investmentRows.forEach(r => {
+        investmentRows.slice(1).forEach(r => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
             <td>${r['Investment #:']}</td>
@@ -253,8 +247,6 @@
             <td>${r['Date:']}</td>
             <td>${r['Insurance:']}</td>
             <td>${r['Purchase Cost:']}</td>
-            <td>${r['Cap %']}</td>
-            <td>${r['Cap:']}</td>
             <td>${r['Market Value:']}</td>
             <td>${r['# of shares:']}</td>
             <td>${r['% of share:']}</td>
