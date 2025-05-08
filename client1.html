@@ -183,13 +183,20 @@
       <table id="investmentTable">
         <thead>
           <tr>
+            <th>Investment #</th>
             <th>Ticker</th>
             <th>Status</th>
             <th>Date</th>
+            <th>Insurance</th>
+            <th>Purchase Cost</th>
+            <th>Cap %</th>
+            <th>Cap</th>
             <th>Market Value</th>
             <th># of Shares</th>
+            <th>% of Share</th>
             <th>Net Value</th>
             <th>Net Gain</th>
+            <th>% Gain</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -229,13 +236,20 @@
         rows.forEach(r => {
           const tr = document.createElement('tr');
           tr.innerHTML = `
+            <td>${r['Investment #:']}</td>
             <td>${r['Ticker:']}</td>
             <td>${r['Status']}</td>
             <td>${r['Date:']}</td>
+            <td>${r['Insurance:']}</td>
+            <td>${r['Purchase Cost:']}</td>
+            <td>${r['Cap %']}</td>
+            <td>${r['Cap:']}</td>
             <td>${r['Market Value:']}</td>
             <td>${r['# of shares:']}</td>
+            <td>${r['% of share:']}</td>
             <td>${r['Net Value:']}</td>
             <td>${r['Net Gain:']}</td>
+            <td>${r['% Gain:']}</td>
           `;
           tbody.appendChild(tr);
         });
